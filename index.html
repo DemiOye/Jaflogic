@@ -10,17 +10,22 @@
 
             body {
                 margin: 0;
-                font-family: Mulish regular;
+                font-family: Source sans pro;
             }
 
             h1, h2, h3 {
                 margin: 0;
-                color: #065793;
+            }
+
+            #main {
+                position: relative;
+                z-index: 1;
             }
 
             /*------NAV HEADER------*/
 
-            nav {
+            #nav {
+                top: 0;
                 display: flex;
                 position: fixed;
                 background-color: #b70404;
@@ -36,9 +41,8 @@
             }
 
             .logo {
-                width: 20%;
-                min-width: 60px;
-                max-width:95px;
+                width: 60%;
+                min-width: 230px;
             }
 
             .nav-sub {
@@ -66,55 +70,52 @@
                 border-bottom: 4px solid #eddb3b;
             }
 
-            .menu-btn {
+            #menu-btn {
                 display: none;
             }
 
-            .menu-btn i {
+            #menu-btn i {
                 color: white;
                 font-size: 23px;
             }
 
-            .menu-btn:hover i {
+            #menu-btn:hover i {
                 color: #eddb3b;
             }
 
-            .menu {
+            #menu {
                 display: none;
-                position: absolute;
                 position: fixed;
-                z-index: 2;
                 top: 0;
                 right: 0;
                 line-height: 7.0;
                 height: 100%;
                 width: 35%;
-                min-width: 250px;
+                min-width: 300px;
                 padding: 15px;
                 background-color: #b70404;
             }
 
-            .menu-close {
+            #menu-close {
                 border: none;
                 float: right;
                 background: none;
             }
 
-            .menu-close i {
+            #menu-close i {
                 font-size: 20px;
                 color: white;
                 cursor: pointer;
             }
 
-            .menu-close:hover i {
+            #menu-close:hover i {
                 font-size: 23px;
                 color: #eddb3b;
             } 
 
-            .menu img {
-                width: 20%;
-                min-width: 60px;
-                max-width:95px;
+            #menu img {
+                width: 60%;
+                min-width: 230px;
             }
 
             .menu-sub {
@@ -160,7 +161,8 @@
                 }
 
                 .nav-link {
-                    margin-right: 7%;
+                    margin-left: 7%;
+                    margin-right: 0%;
                 }
 
                 .nav-link a {
@@ -180,7 +182,11 @@
                     display: none; 
                 }
 
-                .menu-btn {
+                #menu {
+                    width: 1px;
+                }
+
+                #menu-btn {
                     display: block;
                     border: none;
                     background: none;
@@ -197,7 +203,15 @@
 
             @media screen and (max-width: 400px) {
 
-                .menu {
+                #menu {
+                    min-width: 250px;
+                }
+
+            }
+
+            @media screen and (max-width: 350px) {
+
+                #menu {
                     min-width: 94%;
                     padding-left: 3%;
                     padding-right: 3%;
@@ -209,6 +223,8 @@
             /*------HOME------*/
 
             #home {
+                position: relative;
+                z-index: -2;
                 padding: 20px;
                 height: 650px;
                 max-height: 650px;
@@ -222,6 +238,7 @@
 
             .slide-two {
                 background-image: url("img/2.jpg");
+
             }
 
             .slide-three {
@@ -229,25 +246,27 @@
             }
 
             .home-banner {
+                z-index: -1;
                 padding-top: 22%;
                 padding-bottom: 21%;
-                padding-left: 20px;
-                padding-right: 20px;
+                padding-left: 25px;
+                padding-right: 25px;
                 margin-bottom: 20px;
-                background: rgba(3, 38, 65, 0.7);
+                background: rgba(0, 0, 0, 0.7);
                 line-height: 1.2;
                 border-radius: 5px;
             }
 
             .homer-banner h2, h3 {
                 color: white;
+                letter-spacing: 0.6px;
             }
 
             .dot-inactive {
                 height: 17px;
                 width: 17px;
                 margin: 0 15px;
-                background-color: #065793;
+                background-color: #b70404;
                 border-radius: 50%;
                 display: inline-block;
                 transition: background-color 0.6s ease;
@@ -330,67 +349,504 @@
 
             }   
 
-            @media screen and (max-width: 350px) {
+             @media screen and (max-width: 350px) {
 
                 .home-banner {
-                    padding-top: 55%;
-                    padding-bottom: 65%;
+                    padding-bottom: 55%;
                 }
 
-            }   
+            }  
+
+           /*------MiSSION------*/ 
+
+            .mission {
+                margin-top: 150px;
+                padding: 20px;
+                padding-left: 7%;
+                padding-right: 7%;
+                line-height: 1.7;
+                background-size: contain;
+                background-position: center;
+                background-image: url("img/switch1.jpg");
+            }
+
+            .mission h2 {
+                font-size: 27px;
+                letter-spacing: 0.6px;
+                color: #eddb3b;
+            }
+
+            .mission p {
+                color: white;
+                font-size: 20px;
+                font-weight: bolder;
+                letter-spacing: 0.6px;
+            }
+
+            .mission-left {
+                text-align: left;
+                margin-right: 40%; 
+                background: rgba(3, 38, 65, 0.6); 
+                border-radius: 5px; 
+                padding: 50px
+            }
+
+            .mission-right {
+                text-align: right;
+                margin-left: 40%; 
+                background: rgba(3, 38, 65, 0.6); 
+                border-radius: 5px; 
+                padding: 50px
+            }
+
+            @media screen and (max-width: 800px) {
+
+                .mission {
+                background-size: cover;
+                }
+
+                .mission-left {
+                    margin-right: 0%; 
+                }
+
+                .mission-right {
+                    text-align: left;
+                    margin-left: 0%; 
+                }
+
+            }
+
+            @media screen and (max-width: 550px) {
+
+                .mission {
+                    padding-left: 3%;
+                    padding-right: 3%;
+                }
+
+            }
+
+
+
+
+            /*------SERVICES------*/
+
+            #services {
+                margin-top: 150px;
+                padding: 20px;
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            #services h2 {
+                font-size: 30px;
+                letter-spacing: 0.6px;
+                color: #065793;
+                margin-bottom: 70px;
+            }
 
             .services-cont {
                 column-count: 2;
             }
 
             .services-item {
-                background-color: pink;
+                display: flex;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+                border-radius: 5px;
+                max-height: 95px;
+            }
+            
+            .services-item img {
+                width: 23%;
+                min-width: 50px;
+                margin: 12px;
+            }
+
+            .item-sub {
+                width: 94%;
+                padding-top: 3px;
+                padding-left: 3%;
+                padding-right: 3%;
+                background-color: #065793; 
+                border-radius: 5px;
+                text-align: left;
+                line-height: 1.7;
+            }
+
+            .item-sub h3 {
+                letter-spacing: 0.6px;
+                color: #eddb3b;
+            }
+
+            .item-sub span {
+                letter-spacing: 0.6px;
+                font-weight: 600;
+                color: white;
+            }
+
+            @media screen and (max-width: 900px) {
+
+                .services-cont {
+                    column-count: 1;
+                }
+
+            }
+
+            @media screen and (max-width: 550px) {
+
+                #services {
+                    padding-left: 3%;
+                    padding-right: 3%;
+                }
+
+            }
+
+
+
+
+            /*------GALLERY-----*/
+
+            #gallery {
+                display: none;
+            }
+
+
+
+
+
+
+
+            /*------CLIENTS------*/
+
+            #clients {
+                margin-top: 170px;
+                border-radius: 5px;
+                margin-left: 7%;
+                margin-right: 7%;
+                padding: 20px;
+                padding-bottom: 30px;
+                padding-left: 35px;
+                line-height: 2.7;
+                padding-top: 25px;
+                background-image: url("img/clients.jpg");
+                background-size: cover;
+                background-position: center;
+            }
+
+            #clients h2 {
+                font-size: 30px;
+                letter-spacing: 0.6px;
+                margin-bottom: 15px;
+                color: #eddb3b;
+            }
+
+            #clients span {
+                font-size: 21px;
+                background: rgba(255, 255, 255, 0.9);
+                margin-bottom: 15px;
+                padding: 10px;
+                padding-left: 25px;
+                letter-spacing: 1.2px;
+                color: #065793;
+                padding-right: 40%;
+                border-radius: 40px;
+                font-weight: 700;
+            }
+
+            @media screen and (max-width: 550px) {
+
+                #clients {
+                    padding-left: 20px;
+                    margin-left: 3%;
+                    margin-right: 3%;
+                }
+
+                #clients span {
+                    font-size: 18px;
+                    padding: 7px;
+                    padding-left: 22px;
+                    letter-spacing: 1px;
+                    padding-right: 25%;
+                    font-weight: 600;
+                }
+
+            }
+
+
+            /*------CONTACTS------*/
+
+            #contact {
+                margin-top: 150px;
+                margin-left: 7%;
+                margin-right: 7%;
+            }
+
+            #contact h2 {
+                text-align: center;
+                font-size: 30px;
+                letter-spacing: 0.6px;
+                color: #065793;
+                margin-bottom: 70px;
+            }
+
+            .map {
+                margin-bottom: 100px;
+            }
+
+            .map iframe {
+                border-radius: 5px;
+            }
+
+            .contact-cont {
                 display: flex;
             }
 
-            .icons {
-                font-size: 17px;
+            .contact-info {
+                width: 38%;
+                margin-right: 2%;
             }
 
-            form {
+            .contact-info i {
+                font-size: 17px;
+                text-align: center;
+                width: 15px;
+                height: 15px;
+                color: white;
+                padding: 10px;
+                margin-right: 12px;
+                border-radius: 50%;
+                background-color: #b70404;
+            }
+
+            .contact-single {
+                display: flex;
+                letter-spacing: 0.6;
+                color: #5d5d5d;
+                font-size: 18px;
+            }
+
+            .contact-single b {
+                font-weight: 600;
+            }
+
+            .contact-form {
+                width: 60%;
+            }
+
+            .contact-form form {
                 display: grid;
             }
+
+            .contact-form label {
+                font-size: 20px;
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                color: #b70404;
+                margin-bottom: 15px;
+            }
+
+            .contact-form input {
+                margin-bottom: 20px;
+                border: 1px #d3d3d3 solid;
+                color: #1d1d1d;
+                font-size: 17px;
+                padding: 8px;
+                padding-left: 15px;
+                border-radius: 3px;
+            }
+
+            .contact-form input:focus {
+                outline: none !important;
+                border: 2px #065793 solid;
+            }
+
+            .contact-form textarea {
+                border: 1px #d3d3d3 solid;
+                color: #1d1d1d;
+                font-size: 19px;
+                padding: 10px;
+                margin-bottom: 20px;
+                border-radius: 3px;
+            }
+
+            .contact-form textarea:focus {
+                outline: none !important;
+                border: 2px #065793 solid;
+            }
+
+            #submit {
+                background-color: #b70404;
+                color: white;
+                font-size: "20px";
+                text-transform: uppercase;
+                letter-spacing: 0.6;
+                border: none;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+
+            #submit:hover {
+                background-color: #065793;
+            }
+
+            @media screen and (max-width: 900px) {
+
+                #contact {
+                    margin-left: 3%;
+                    margin-right: 3%
+                }
+
+            }
+
+            @media screen and (max-width: 700px) {
+
+                .contact-cont {
+                    display: grid;
+                }
+
+                .contact-info {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 50px;
+                }
+
+                .contact-form {
+                    width: 100%;
+                }
+
+            }
+
+
+
+
+            /*------FOOTER------*/
+
+            #footer {
+                display: flex;
+                margin-top: 150px;
+                background-color: #065793;
+                padding: 20px;
+                padding-top: 30px;
+                padding-bottom: 50px;
+            }
+
+            #footer ul {
+                line-height: 1.5;
+                list-style-type: none;
+                color: white;
+                font-size: 15px;
+            }
+
+            #footer a {
+                text-decoration: none;
+                color: white;
+                cursor: pointer;
+            }
+
+            #footer a:hover {
+                text-decoration: underline;
+            }
+
+            .footer-sub {
+                margin-right: 3%;
+            }
+
+            .footer-sub h2 {
+                font-size: 22px;
+                margin-left: 40px;
+                color: #eddb3b;
+            }
+
+            .footer-sub i {
+                font-size: 18px;
+                margin-right: 7px;
+}
+
+            .footer-social h2 {
+                font-size: 22px;
+                color: #eddb3b;
+                margin-bottom: 15px;
+            }
+
+            .footer-social i {
+                font-size: 22px;
+                margin-right: 20px;
+            }
+
+            .footer-social i:hover {
+                color: #eddb3b;
+            }
+
+            .copyright {
+                font-weight: 600; 
+                padding: 17px; 
+                font-size:18px; 
+                letter-spacing: 0.6px; 
+                color: #eddb3b; 
+                background-color: #065793;
+            }
+
+            @media screen and (max-width: 980px) {
+
+                .footer-sub {
+                    margin-right: 1%;
+                }
+
+            }
+
+            @media screen and (max-width: 924px) {
+
+                #footer {
+                    display: grid;
+                }
+
+                .footer-sub {
+                    margin-bottom: 20px;
+                }
+
+                .footer-social {
+                    margin-left: 40px;
+                }
+            }
+
+            @media screen and (max-width: 450px) {
+
+                #footer {
+                    padding-top: 50px;
+                }
+
+                .copyright {
+                    font-size: 15px;
+                }
+
+            }
+
+
 
         </style>
 
     </head>
 
-    <body>
-        <nav>
+    <body id="body">
+        <div id="main">
+        <nav id="nav">
             <div class="nav-img">
-                <img class="logo" src="img/logo.png">
+                <img class="logo" src="img/logo2.png">
             </div>
                 <div align="right" class="nav-sub">
-                    <div class="nav-link"><a href="">Home</a></div>
-                    <div class="nav-link"><a href="">Services</a></div>
-                    <div class="nav-link"><a href="">Gallery</a></div>
-                    <div class="nav-link"><a href="">Clients</a></div>
-                    <div class="nav-link"><a href="">Contact</a></div>
-                    <button class="menu-btn"><i class="fa fa-bars"></i></button>
+                    <div class="nav-link"><a id="home-link">Home</a></div>
+                    <div class="nav-link"><a id="services-link">Services</a></div>
+                    <div class="nav-link"><a id="gallery-link">Gallery</a></div>
+                    <div class="nav-link"><a id="clients-link">Clients</a></div>
+                    <div class="nav-link"><a id="contact-link">Contact</a></div>
+                    <button id="menu-btn"><i class="fa fa-bars"></i></button>
                 </div>
         </nav>
-
-        <div class="menu">
-            <button title="Close" class="menu-close"><i class="fa fa-close"></i></button>
-            <img src="img/logo.png">
-            <div align="center" class="menu-sub">
-                <a href="">Home</a>
-                <a href="">Services</a>
-                <a href="">Gallery</a>
-                <a href="">Clients</a>
-                <a href="">Contact</a>
-            </div>
-        </div>
 
         <div id="home">
             <div class="home-banner">
                 <h1 style="color: white">Welcome to Jaflogic Enterprises</h1><br>
-                <h2 style="color: white; line-height: 1.3;">Information Technology solution and Altrenative Renewable Power Systems</h2>
+                <h2 style="color: white; line-height: 1.3;">Information Technology solution and Alternative Renewable Power Systems</h2>
             </div>
             <div style="text-align: center">
                 <span id="dot-1"></span> 
@@ -399,64 +855,68 @@
               </div>
         </div>
 
-        <div class="mission">
-            <h2>Mission Statement</h2>
-            <p>"To provide products and services of perceived and recognized superior quality to customers and consumers always,
-                in sustainable and responsible ways"</p>
-
-            <h2>Prospective Vision</h2>
-            <p>"To be a successful Global Informaton Technology Company trusted by it's customers for service excellence,
-                caring for it's employees and colaborating with our customers to deliver innovative and value driven ICT products and services"</p>
+        <div id="mission" class="mission">
+            <div class="mission-left" align="left">
+                <h2>Mission Statement</h2>
+                <p>"To provide products and services of perceived and recognized superior quality to customers and consumers always,
+                    in sustainable and responsible ways"</p>
+            </div>
+            <br><br>
+            <div class="mission-right" align="right">
+                <h2>Prospective Vision</h2>
+                <p>"To be a successful Global Informaton Technology Company trusted by it's customers for service excellence,
+                    caring for it's employees and colaborating with our customers to deliver innovative and value driven ICT products and services"</p>
+            </div>
         </div>
 
-        <div id="services">
+        <div align="center" id="services">
             <h2>Our Services</h2>
 
         <div class="services-cont">
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/computers.png">
+                <div class="item-sub">
                     <h3>Computers</h3>
                     <span>Sales, Installation and Support.</span>
                 </div>
             </div>
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/cables.png">
+                <div class="item-sub">
                     <h3>Structural Cabling</h3>
                     <span>LAN, WAN: Data and voice cabling networking points.</span>
                 </div>
             </div>
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/servers.png">
+                <div class="item-sub">
                     <h3>Servers</h3>
                     <span>Sales and Deployment</span>
                 </div>
             </div>
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/printers.png">
+                <div class="item-sub">
                     <h3>Printers</h3>
                     <span>Sales, Repairs and Installation</span>
                 </div>
             </div>
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/cameras.png">
+                <div class="item-sub">
                     <h3>Cameras</h3>
                     <span>Sales and Installation</span>
                 </div>
             </div>
 
             <div class="services-item">
-                <img src="">
-                <div>
+                <img src="img/inverters.png">
+                <div class="item-sub">
                     <h3>Inverters</h3>
                     <span>Inverter Batteries, Charge Controllers, Solar Panels etc.</span>
                 </div>
@@ -473,70 +933,72 @@
 
         <div id="clients">  
             <h2>Clients</h2>
-            <span>Faithlink Nig. Ltd</span>
-            <span>Younes Power System</span>
-            <span>Citimax Nig. Ltd</span>
-            <span>Linkage Assurance</span>
-            <span>Mosunmolu Nig. Ltd</span>
-            <span>Aye Falaiye & Co.</span>
-            <span>Subeb</span>
-            <span>Cicero Law Firm</span>
+            <span>Faithlink Nig. Ltd</span><br>
+            <span>Younes Power System</span><br>
+            <span>Citimax Nig. Ltd</span><br>
+            <span>Linkage Assurance</span><br>
+            <span>Mosunmolu Nig. Ltd</span><br>
+            <span>Aye Falaiye & Co.</span><br>
+            <span>Subeb</span><br>
+            <span>Cicero Law Firm</span><br>
         </div>
 
         <div id="contact">
             <h2>Contact</h2>
 
             <div class="map">
-                <iframe></iframe>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=4%20Olayiwola%20St,%20Oregun%20101233,%20Ikeja,%20Lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://2piratebay.org"></a><br>
+                        <style>.mapouter{text-align:right;height:400px;width:100%}</style>
+                        <a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%}</style>
+                    </div>
+                </div>
             </div>
 
-            <div class="contact-info">
-                <ul>
-                    <li>
+            <div class="contact-cont">
+                            
+                <div class="contact-info">
+
+                    <div class="contact-single">
                         <i class="fa fa-phone"></i><br>
-                        +234 8081342956
-                    </li>
+                            <span style="display: block; margin-top: 7px;">08081342956, 08036497574</span>
+                    </div><br>
+    
+                    <div class="contact-single">
+                        <i style="font-size: 13px" class="fa fa-envelope"></i><br>
+                            <span style="display: block; margin-top: 7px;">info@jaflogic-enterprise.com</span>
+                    </div><br>
+    
+                    <div class="contact-single">
+                        <i style="max-height: 12px" class="fa fa-map-marker"></i><br>
+                            <span style="line-height: 1.3">
+                                <b>Head Office:&nbsp;</b>
+                                    5b, Taiwo Ishola street, Lekki phase1, Lekki, Lagos.
+                                <br><br style="line-height: 1px;">
+                                <b>Ikeja Office:&nbsp;</b>
+                                4, Olayiwola street, oregun , Lagos.
+                            </span>
+                        
+                    </div>
+    
+                    </div>
+    
+                    <div class="contact-form">
+                        <form action="mailto:jaflogicenterprise@gmail.com">
 
-                    <li>
-                        <i class="fa fa-envelope"></i><br>
-                        info@jaflogic.com
-                    </li>
-
-                    <li>
-                        <i class="fa fa-map-marker"></i><br>
-                        <b>Head Office</b><br>
-                           5b, Taiwo Ishola street, Lekki phase1, Lekki, Lagos.
-
-                        <br>
-
-                        <b>Ikeja Office</b><br>
-                           4, Olayiwola street, oregun , Lagos.
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="contact-form">
-                <form>
-
-                    <label>Name</label>
-                    <input/>
-
-                    <label>Email</label>
-                    <input/>
-
-                    <label>Phone</label>
-                    <input/>
-
-                    <label>Subject</label>
-                    <input/>
-
-                    <label>Message</label>
-                    <Textarea></Textarea>
-
-                    <input id="submit" type="submit" value="submit"/>
-
-                </form>
+                            <label>Message Us</label>
+                                <input placeholder="Name" name="Name" id="Name" type="text" required/>
+                                <input placeholder="Phone Number" type="text" required/>
+                                <input placeholder="Email" type="text" required/>
+                                <input placeholder="Subject" type="text" required/>
+                                <Textarea placeholder="Message" required></Textarea>
+                            
+                                <input id="submit" type="submit" value="submit"/>
+                        </form>
+        
+                    </div>
 
             </div>
 
@@ -544,54 +1006,72 @@
 
         <div id="footer">
 
-            <div>
+            <div class="footer-sub">
                 <h2>Quick Links</h2>
-                <a href="">Services</a>
-                <a href="">Gallery</a>
-                <a href="">Clients</a>
-                <a href="">Contact</a>
+                <ul>
+                    <li><a id="footer-services" >Services</a></li>
+                    <li><a id="footer-gallery" >Gallery</a></li>
+                    <li><a id="footer-clients" >Clients</a></li>
+                    <li><a id="footer-contact" >Contact</a></li>
+                </ul>
             </div>
 
-            <div>
+            <div class="footer-sub">
                 <h2>Contact</h2>
                 <ul>
                     <li>
-                        <i class="fa fa-phone"></i><br>
-                        +234 8081342956
+                        <i class="fa fa-phone"></i>
+                        &nbsp;&nbsp;08081342956, 08036497574
                     </li>
 
                     <li>
-                        <i class="fa fa-envelope"></i><br>
-                        info@jaflogic.com
+                        <i class="fa fa-envelope"></i>
+                        &nbsp;&nbsp;info@jaflogic-enterprise.com
                     </li>
                 </ul>
             </div>
 
-            <div>
+            <div class="footer-sub">
                 <h2>Location</h2>
                 <ul>
                     <li>
                         <i class="fa fa-map-marker"></i><br>
                         <b>Head Office</b><br>
                            5b, Taiwo Ishola street, Lekki phase1, Lekki, Lagos.
-
                         <br>
-
                         <b>Ikeja Office</b><br>
                            4, Olayiwola street, oregun , Lagos.
                     </li>
                 </ul>
             </div>
 
-            <div>
+            <div class="footer-social">
                 <h2>Social</h2>
-                <a href=""><i class="fa fa-whatsapp"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-instagram"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a target="_blank" href="https://wa.me/2348036497574?text=Hi%20there,%20I%20would%20like%20to%20make%20inquiries%20about%20your%20services%20at%20Jaflogic%20Enterprises."><i class="fa fa-whatsapp"></i></a>
+                <a target="_blank" href="https://www.facebook.com/jaflogicenterprise/"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/wale-james-a581723a/?originalSubdomain=ng"><i class="fa fa-linkedin"></i></a>
             </div>
 
         </div>
+
+        <div align="center" class="copyright">
+            Jaflogic Enterprises © <script>document.write(new Date().getFullYear());</script> All rights reserved
+        </div>
+
+    </div>
+
+    <div id="menu">
+        <button title="Close" id="menu-close"><i class="fa fa-close"></i></button>
+        <img src="img/logo2.png">
+        <div align="center" class="menu-sub">
+            <a id="menu-home">Home</a>
+            <a id="menu-services">Services</a>
+            <a id="menu-gallery">Gallery</a>
+            <a id="menu-clients">Clients</a>
+            <a id="menu-contact">Contact</a>
+        </div>
+    </div>
 
         <script src="index.js"></script>
 
